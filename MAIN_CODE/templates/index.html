@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cabin&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Londrina+Shadow&display=swap" rel="stylesheet">
+
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='style_resp.css') }}"> -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <!-- <script src="{{ url_for('static', filename='script_resp.js') }}"></script> -->
+
+
+    <!-- <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style_resp.css">  
+    <script src="script.js"></script>  
+    <script src="script_resp.js"></script>  -->
+
+
+
+    <title>Placement Predictor</title>
+</head>
+
+<body>
+    <div class="mainbox">
+        <div class="sub_box" id="left_div">
+            <h1>Placement Predictor</h1>
+            <div class="under"></div>
+
+            <!-- <button id="slideButton">Slide Up</button> -->
+
+            <form action="/login" method="post" id="myForm">    
+
+                <div class="inputs">
+
+                    <div class="age">
+                        <span>Age</span>
+                        <input type="number" name="ag" min="0"  id="ag"/>
+                    </div>
+
+                    <div class="gender">
+                        <span>Gender</span>
+                        <select name="gen"  id="ge">
+                            <option value="m">Male</option>
+                            <option value="f">Female</option>
+                        </select>
+                    </div>
+
+                    <div class="stream">
+                        <span>Stream</span>
+                        <select name="str"  id="st">
+                            <option value="ecc">Electronics And Communication</option>
+                            <option value="cse">Computer Science</option>
+                            <option value="it">Information Technology</option>
+                            <option value="mec">Mechanical</option>
+                            <option value="ece">Electrical</option>
+                            <option value="cv">Civil</option>
+                        </select>
+                    </div>
+
+                    <div class="internship">
+                        <span>Interships completed</span>
+                        <input type="number" name="intr" min="0"  id="in"/>
+                    </div>
+                    <div class="cgpa">
+                        <span>Current CGPA</span>
+                        <input type="number" name="cgpa" step="0.01" min="0.00" max="10.00" placeholder="0.00"  id="cg"/>
+                    </div>
+                    <div class="backlog">
+                        <span>Backlogs</span>
+                        <input type="number" name="bck"  min="0" id="ba"/>
+                    </div>
+
+
+                    <input type="submit" value="submit" id="submit" />
+                    
+
+                </div>
+            </form>
+                
+        </div>
+        <div class="sub_box" id="right_div">
+            <h2 id="pred">{{y}}</h2>
+
+            <h4 id="back"><a href="#" >Back >></a></h4>
+
+            <!-- <h2 id="pred">High chances of getting Placed</h2> -->
+        </div>
+    </div>
+</body>
+
+</html>
